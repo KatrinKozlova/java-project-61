@@ -1,0 +1,7 @@
+[versions]
+catalog-update-plugin = "1.1.1"
+versions-plugin = "0.64.0"
+
+[plugins]
+version-catalog-update = { id = "nl.littlerobots.version-catalog-update", version.ref = "catalog-update-plugin" }
+versions = { id = "io.github.ben-manes.versions", version.ref = "versions-plugin" }
