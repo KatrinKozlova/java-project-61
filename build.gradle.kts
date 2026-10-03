@@ -28,6 +28,10 @@ tasks.test {
     useJUnitPlatform()
 }
 
+tasks.getByName("run", JavaExec::class) {
+    standardInput = System.`in`
+}
+
 spotless {
     java {
         target("src/**/*.java")
