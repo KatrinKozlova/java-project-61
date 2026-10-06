@@ -37,8 +37,8 @@ cd java-project-61
 ## Записи
 
 Even: https://asciinema.org/a/0hNmOd8cG4PJGwvK
+Calc: https://asciinema.org/a/Ud56j098rQIOVcr7
 
-<a href="https://asciinema.org/a/0hNmOd8cG4PJGwvK" target="_blank"><img src="https://asciinema.org/a/0hNmOd8cG4PJGwvK.svg" /></a>
 
 ## О Хекслете
 
