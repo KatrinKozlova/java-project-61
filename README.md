@@ -38,6 +38,9 @@ cd java-project-61
 
 Even: https://asciinema.org/a/0hNmOd8cG4PJGwvK
 Calc: https://asciinema.org/a/Ud56j098rQIOVcr7
+GCD: https://asciinema.org/a/1AUO7Ne59VtPOIam
+Progression: https://asciinema.org/a/wgdgLNBgffTCSIW5
+Prime: https://asciinema.org/a/j19i5ORP8OFQuadY
 
 
 ## О Хекслете
