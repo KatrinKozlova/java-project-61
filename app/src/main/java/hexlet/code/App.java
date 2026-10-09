@@ -29,7 +29,8 @@ public class App {
       case "4":
       case "5":
       case "6":
-        Engine.run(scanner, choice);
+        var name = Cli.greet(scanner);
+        Engine.run(scanner, choice, name);
         break;
       default:
         scanner.close();

@@ -5,9 +5,7 @@ import java.util.Scanner;
 import hexlet.code.games.*;
 
 public class Engine {
-  public static void run(Scanner scanner, String choice) {
-
-    var name = Cli.greet(scanner);
+  public static void run(Scanner scanner, String choice, String name) {
 
     switch (choice) {
       case "2":
