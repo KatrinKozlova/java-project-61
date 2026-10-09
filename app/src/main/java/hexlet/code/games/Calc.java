@@ -23,7 +23,7 @@ public class Calc {
     int index = (int) (Math.random() * operations.length);
     symbol = operations[index];
 
-    return number1 + symbol + number2;
+    return number1 + " " + symbol + " " + number2;
   }
 
   public static String getAnswer() {
