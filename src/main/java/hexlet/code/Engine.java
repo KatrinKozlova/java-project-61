@@ -16,6 +16,15 @@ public class Engine {
       case "3":
         Calc.rule();
         break;
+      case "4":
+        GCD.rule();
+        break;
+      case "5":
+        Progression.rule();
+        break;
+      case "6":
+        Prime.rule();
+        break;
     }
 
     var index = 0;
@@ -34,6 +43,18 @@ public class Engine {
         case "3":
           question = Calc.getQuestion();
           correctAnswer = Calc.getAnswer();
+          break;
+        case "4":
+          question = GCD.getQuestion();
+          correctAnswer = GCD.getAnswer();
+          break;
+        case "5":
+          question = Progression.getQuestion();
+          correctAnswer = Progression.getAnswer();
+          break;
+        case "6":
+          question = Prime.getQuestion();
+          correctAnswer = Prime.getAnswer();
           break;
       }
 
