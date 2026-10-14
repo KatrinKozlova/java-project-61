@@ -1,42 +1,48 @@
 package hexlet.code.games;
 
+import hexlet.code.Engine;
+
 public class Prime {
+  public static void gamePrime() {
 
-  private static int number;
+    String gameRule = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
-  public static void rule() {
-
-    System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
-  }
-
-  public static String getQuestion() {
+    String[][] questionsAndAnswers = new String[3][2];
 
     var max = 100;
     var min = 1;
 
-    number = (int) (Math.random() * max) + min;
+    for (String[] questionAndAnswer : questionsAndAnswers) {
+      int number = (int) (Math.random() * max) + min;
 
-    return Integer.toString(number);
+      questionAndAnswer[0] = Integer.toString(number);
+      questionAndAnswer[1] = isPrime(number) ? "yes" : "no";
+    }
+
+    Engine.run(gameRule, questionsAndAnswers);
   }
 
-  public static String getAnswer() {
+  private static boolean isPrime(int number) {
 
     if (number <= 1) {
-      return "no"; // Числа <= 1 не являются простыми
+      return false; // Числа <= 1 не являются простыми
     }
+
     if (number == 2) {
-      return "yes"; // 2 — единственное чётное простое число
+      return true; // 2 — единственное чётное простое число
     }
+
     if (number % 2 == 0) {
-      return "no"; // Проверяем только нечётные числа
+      return false; // Проверяем только нечётные числа
     }
 
     int sqrtN = (int) Math.sqrt(number);
     for (int i = 3; i <= sqrtN; i += 2) {
       if (number % i == 0) {
-        return "no"; // Найден делитель, число составное
+        return false; // Найден делитель, число составное
       }
     }
-    return "yes";
+
+    return true;
   }
 }

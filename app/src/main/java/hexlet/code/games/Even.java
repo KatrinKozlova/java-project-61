@@ -1,30 +1,29 @@
 package hexlet.code.games;
 
+import hexlet.code.Engine;
+
 public class Even {
+  public static void gameEven() {
 
-  private static int number;
+    String gameRule = "Answer 'yes' if the number is even, otherwise answer 'no'.";
 
-  public static void rule() {
-
-    System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
-  }
-
-  public static String getQuestion() {
+    String[][] questionsAndAnswers = new String[3][2];
 
     var max = 100;
     var min = 1;
 
-    number = (int) (Math.random() * max) + min;
+    for (String[] questionAndAnswer : questionsAndAnswers) {
+      int number = (int) (Math.random() * max) + min;
 
-    return Integer.toString(number);
+      questionAndAnswer[0] = Integer.toString(number);
+      questionAndAnswer[1] = isEven(number) ? "yes" : "no";
+    }
+
+    Engine.run(gameRule, questionsAndAnswers);
   }
 
-  public static String getAnswer() {
+  private static boolean isEven(int number) {
 
-    if (number % 2 == 0) {
-      return "yes";
-    } else {
-      return "no";
-    }
+    return number % 2 == 0;
   }
 }

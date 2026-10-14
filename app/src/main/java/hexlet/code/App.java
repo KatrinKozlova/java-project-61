@@ -2,6 +2,8 @@ package hexlet.code;
 
 import java.util.Scanner;
 
+import hexlet.code.games.*;
+
 public class App {
   public static void main(String[] args) {
 
@@ -25,15 +27,22 @@ public class App {
         Cli.greet(scanner);
         break;
       case "2":
+        Even.gameEven();
+        break;
       case "3":
+        Calc.gameCalc();
+        break;
       case "4":
+        GCD.gameGCD();
+        break;
       case "5":
+        Progression.gameProgression();
+        break;
       case "6":
-        var name = Cli.greet(scanner);
-        Engine.run(scanner, choice, name);
+        Prime.gamePrime();
         break;
       default:
-        scanner.close();
+        System.out.println("Incorrect choice, please try again!");
     }
 
     scanner.close();

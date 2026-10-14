@@ -1,41 +1,38 @@
 package hexlet.code.games;
 
+import hexlet.code.Engine;
+
 public class Calc {
+  public static void gameCalc() {
 
-  private static int number1;
-  private static int number2;
-  private static String symbol;
+    String gameRule = "What is the result of the expression?";
 
-  public static void rule() {
-
-    System.out.println("What is the result of the expression?");
-  }
-
-  public static String getQuestion() {
+    String[] operations = {"+", "-", "*"};
+    String[][] questionsAndAnswers = new String[3][2];
 
     var max = 20;
     var min = 1;
 
-    number1 = (int) (Math.random() * max) + min;
-    number2 = (int) (Math.random() * max) + min;
+    for (String[] questionAndAnswer : questionsAndAnswers) {
+      int number1 = (int) (Math.random() * max) + min;
+      int number2 = (int) (Math.random() * max) + min;
+      int index = (int) (Math.random() * operations.length);
+      String operator = operations[index];
 
-    String[] operations = {"+", "-", "*"};
-    int index = (int) (Math.random() * operations.length);
-    symbol = operations[index];
+      questionAndAnswer[0] = number1 + " " + operator + " " + number2;
+      questionAndAnswer[1] = Integer.toString(resultCalc(operator, number1, number2));
+    }
 
-    return number1 + " " + symbol + " " + number2;
+    Engine.run(gameRule, questionsAndAnswers);
   }
 
-  public static String getAnswer() {
+  private static int resultCalc(String operator, int number1, int number2) {
 
-    int correctAnswer =
-        switch (symbol) {
-          case "+" -> number1 + number2;
-          case "-" -> number1 - number2;
-          case "*" -> number1 * number2;
-          default -> 0;
-        };
-
-    return Integer.toString(correctAnswer);
+    return switch (operator) {
+      case "+" -> number1 + number2;
+      case "-" -> number1 - number2;
+      case "*" -> number1 * number2;
+      default -> throw new RuntimeException("Unknown operator " + operator);
+    };
   }
 }
